@@ -34,5 +34,17 @@ describe("<CommentList />", () => {
     const wrapper = shallow(<CommentList data={data} />);
 
     expect(wrapper.state("dataSource")._dataBlob.s1).to.equal(data);
+    const newData = { author: "Pete Hunt", text: "This is one comment" };
+
+    // push new data, test willReceiveProps
+    data.push(newData);
+    wrapper.setProps(data);
+    expect(wrapper.state("dataSource")._dataBlob.s1).to.equal(data);
+  });
+
+  it("should render row with data", () => {
+    const newData = { author: "Pete Hunt", text: "This is one comment" };
+    const comment = CommentList.prototype.renderComment(newData);
+    expect(comment.type).to.equal(Comment);
   });
 });
