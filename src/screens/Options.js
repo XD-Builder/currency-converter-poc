@@ -46,4 +46,5 @@ class Options extends Component {
     );
   }
 }
+
 export default connectAlert(Options);

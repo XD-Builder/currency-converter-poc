@@ -1,12 +1,12 @@
 import {
-  CHANGE_CURRENCY_AMOUNT,
-  SWAP_CURRENCY,
-  CHANGE_BASE_CURRENCY,
-  CHANGE_QUOTE_CURRENCY,
-  GET_INITIAL_CONVERSION,
-  CONVERSION_RESULT,
-  CONVERSION_ERROR,
-} from '../actions/currencies';
+  CURRENCY_CHANGE_AMOUNT,
+  CURRENCY_SWAP_CURRENCY,
+  CURRENCY_CHANGE_BASE,
+  CURRENCY_CHANGE_QUOTE,
+  CURRENCY_GET_INITIAL_CONVERSION,
+  CURRENCY_CONVERSION_RESULT,
+  CURRENCY_CONVERSION_ERROR,
+} from '../actions/actionTypes';
 
 const initialState = {
   baseCurrency: 'USD',
@@ -35,28 +35,28 @@ const setConversions = (state, action) => {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case CHANGE_CURRENCY_AMOUNT:
+    case CURRENCY_CHANGE_AMOUNT:
       return { ...state, amount: action.amount || 0 };
-    case SWAP_CURRENCY:
+    case CURRENCY_SWAP_CURRENCY:
       return {
         ...state,
         baseCurrency: state.quoteCurrency,
         quoteCurrency: state.baseCurrency,
       };
-    case CHANGE_BASE_CURRENCY:
+    case CURRENCY_CHANGE_BASE:
       return {
         ...state,
         baseCurrency: action.currency,
         conversions: setConversions(state, action),
       };
-    case CHANGE_QUOTE_CURRENCY:
+    case CURRENCY_CHANGE_QUOTE:
       return {
         ...state,
         quoteCurrency: action.currency,
       };
-    case GET_INITIAL_CONVERSION:
+    case CURRENCY_GET_INITIAL_CONVERSION:
       return { ...state, conversions: setConversions(state, { currency: state.baseCurrency }) };
-    case CONVERSION_RESULT:
+    case CURRENCY_CONVERSION_RESULT:
       return {
         ...state,
         baseCurrency: action.result.base,
@@ -68,7 +68,7 @@ export default (state = initialState, action) => {
           },
         },
       };
-    case CONVERSION_ERROR:
+    case CURRENCY_CONVERSION_ERROR:
       return { ...state, error: action.error };
     default:
       return state;

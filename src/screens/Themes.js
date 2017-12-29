@@ -3,9 +3,10 @@ import React, { Component } from 'react';
 import { ScrollView, StatusBar } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import { ListItem, Separator } from '../components/List';
-import { changePrimaryColor } from '../actions/theme';
+import { themeAction } from '../actions';
 
 const styles = EStyleSheet.create({
   $blue: '$primaryBlue',
@@ -17,11 +18,11 @@ const styles = EStyleSheet.create({
 class Themes extends Component {
   static propTypes = {
     navigation: PropTypes.object,
-    dispatch: PropTypes.func,
+    actions: PropTypes.object,
   };
 
   handlePressTheme = (color) => {
-    this.props.dispatch(changePrimaryColor(color));
+    this.props.actions.changePrimaryColor(color);
     this.props.navigation.goBack();
   };
 
@@ -65,4 +66,9 @@ class Themes extends Component {
     );
   }
 }
-export default connect()(Themes);
+
+const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators(themeAction, dispatch),
+});
+
+export default connect(null, mapDispatchToProps)(Themes);

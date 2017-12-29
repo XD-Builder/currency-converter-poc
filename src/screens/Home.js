@@ -76,6 +76,7 @@ class Home extends Component {
         <Header onPress={this.handleOptionsPress} />
         <KeyboardAvoidingView behavior="padding">
           <Logo tintColor={this.props.primaryColor} />
+
           <InputWithButton
             buttonText={this.props.baseCurrency}
             onPress={this.handlePressBaseCurrency}
@@ -84,6 +85,7 @@ class Home extends Component {
             onChangeText={this.handleChangeText}
             textColor={this.props.primaryColor}
           />
+
           <InputWithButton
             editable={false}
             buttonText={this.props.quoteCurrency}

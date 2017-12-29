@@ -8,6 +8,17 @@
   },
   "plugins": ["react"],
   "rules": {
+    "import/prefer-default-export": "off",
+    "prefer-destructuring": [
+      "error",
+      {
+        "array": true,
+        "object": false
+      },
+      {
+        "enforceForRenamedProperties": false
+      }
+    ],
     "react/jsx-filename-extension": [
       2,
       {
