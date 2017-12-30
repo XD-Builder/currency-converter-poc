@@ -5,33 +5,33 @@ import Home from '../screens/Home';
 import CurrencyList from '../screens/CurrencyList';
 import Options from '../screens/Options';
 import Themes from '../screens/Themes';
+import * as screen from '../screens/screenTypes';
 
-const HomeStack = StackNavigator(
-  {
-    Home: {
-      screen: Home,
-      navigationOptions: {
-        header: () => null,
-        headerTitle: 'Home',
-      },
-    },
-    Options: {
-      screen: Options,
-      navigationOptions: {
-        headerTitle: 'Options',
-      },
-    },
-    Themes: {
-      screen: Themes,
-      navigationOptions: {
-        headerTitle: 'Themes',
-      },
-    },
+const HomeStackRoutes = {};
+
+HomeStackRoutes[screen.HOME] = {
+  screen: Home,
+  navigationOptions: {
+    header: () => null,
+    headerTitle: screen.HOME,
   },
-  {
-    headerMode: 'screen',
+};
+HomeStackRoutes[screen.THEMES] = {
+  screen: Themes,
+  navigationOptions: {
+    headerTitle: screen.THEMES,
   },
-);
+};
+HomeStackRoutes[screen.OPTIONS] = {
+  screen: Options,
+  navigationOptions: {
+    headerTitle: screen.OPTIONS,
+  },
+};
+
+const HomeStack = StackNavigator(HomeStackRoutes, {
+  headerMode: 'screen',
+});
 
 const CurrencyListStack = StackNavigator({
   CurrencyList: {

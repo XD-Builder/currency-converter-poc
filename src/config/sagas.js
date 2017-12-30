@@ -21,7 +21,7 @@ function* fetchLatestConversionRates(action) {
     if (result.error) {
       yield put({ type: CURRENCY_CONVERSION_ERROR, error: result.error });
     } else {
-      yield put({ type: CURRENCY_CONVERSION_RESULT, result });
+      yield put({ type: CURRENCY_CONVERSION_RESULT, error: null, result });
     }
   } catch (error) {
     yield put({ type: CURRENCY_CONVERSION_ERROR, error: error.message });

@@ -59,6 +59,7 @@ export default (state = initialState, action) => {
     case CURRENCY_CONVERSION_RESULT:
       return {
         ...state,
+        error: action.error,
         baseCurrency: action.result.base,
         conversions: {
           ...state.conversions,

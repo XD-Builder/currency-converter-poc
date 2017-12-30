@@ -3,10 +3,12 @@ import React, { Component } from 'react';
 import { ScrollView, StatusBar } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import { connect } from 'react-redux';
+import { NavigationActions } from 'react-navigation';
 import { bindActionCreators } from 'redux';
 
 import { ListItem, Separator } from '../components/List';
 import { themeAction } from '../actions';
+import { HOME } from './screenTypes';
 
 const styles = EStyleSheet.create({
   $blue: '$primaryBlue',
@@ -23,7 +25,12 @@ class Themes extends Component {
 
   handlePressTheme = (color) => {
     this.props.actions.changePrimaryColor(color);
-    this.props.navigation.goBack();
+    // const resetAction = NavigationActions.reset({
+    //   index: 0,
+    //   actions: [NavigationActions.navigate({ routeName: HOME })],
+    // });
+    this.props.navigation.goBack(this.props.navigation.state.params.screenKey);
+    // this.props.navigation.dispatch(resetAction);
   };
 
   render() {

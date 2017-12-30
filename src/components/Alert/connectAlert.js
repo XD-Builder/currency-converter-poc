@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import hoistNonReactStatic from 'hoist-non-react-statics';
 
 const connectAlert = (WrappedComponent) => {
+  // provides alertWithType and alert function to connected and soon hoisted components
   class ConnectedAlert extends Component {
     render() {
       return (

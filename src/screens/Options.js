@@ -16,7 +16,9 @@ class Options extends Component {
   };
 
   handlePressThemes = () => {
-    this.props.navigation.navigate('Themes');
+    this.props.navigation.navigate('Themes', {
+      screenKey: this.props.navigation.state.key,
+    });
   };
 
   handlePressSite = () => {
