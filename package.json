@@ -24,8 +24,8 @@
     "ios": "react-native-scripts ios",
     "test": "node node_modules/jest/bin/jest.js --watch",
     "clean": "rimraf dist coverage",
-    "lint": "eslint app/",
-    "lint:fix": "eslint app/ --fix"
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix"
   },
   "jest": {
     "preset": "jest-expo"

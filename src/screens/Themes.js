@@ -3,12 +3,13 @@ import React, { Component } from 'react';
 import { ScrollView, StatusBar } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import { connect } from 'react-redux';
-import { NavigationActions } from 'react-navigation';
 import { bindActionCreators } from 'redux';
 
 import { ListItem, Separator } from '../components/List';
 import { themeAction } from '../actions';
-import { HOME } from './screenTypes';
+
+// import { NavigationActions } from 'react-navigation';
+// import { HOME } from './screenTypes';
 
 const styles = EStyleSheet.create({
   $blue: '$primaryBlue',
