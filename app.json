@@ -1,5 +1,21 @@
 {
   "expo": {
-    "sdkVersion": "23.0.0"
+    "name": "currency-converter-starter-poc",
+    "description": "This project is to poc react native features.",
+    "slug": "currency-converter-starter-poc",
+    "privacy": "public",
+    "sdkVersion": "23.0.0",
+    "platforms": ["ios", "android"],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    }
   }
 }
