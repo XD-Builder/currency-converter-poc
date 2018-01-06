@@ -26,7 +26,6 @@ const setConversions = (state, action) => {
   if (state.conversions[action.currency]) {
     conversion = state.conversions[action.currency];
   }
-
   return {
     ...state.conversions,
     [action.currency]: conversion,
