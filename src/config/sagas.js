@@ -8,9 +8,9 @@ import {
   CURRENCY_CONVERSION_ERROR,
 } from '../actions/actionTypes';
 
-export const getLatestRate = currency => fetch(`http://api.fixer.io/latest?base=${currency}`);
+export const getLatestRate = currency => fetch(`https://api.fixer.io/latest?base=${currency}`);
 
-function* fetchLatestConversionRates(action) {
+export function* fetchLatestConversionRates(action) {
   try {
     let currency = action.currency;
     if (currency === undefined) {

@@ -27,7 +27,7 @@ describe('currenciesAction', () => {
     expect(action.changeBaseCurrency(this.currency)).toEqual(expectedAction);
   });
 
-  it('should create an action to changeBaseCurrency', () => {
+  it('should create an action to changeQuoteCurrency', () => {
     const expectedAction = { type: types.CURRENCY_CHANGE_QUOTE, currency: this.currency };
     expect(action.changeQuoteCurrency(this.currency)).toEqual(expectedAction);
   });

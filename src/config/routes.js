@@ -16,6 +16,7 @@ HomeStackRoutes[screen.HOME] = {
     headerTitle: screen.HOME,
   },
 };
+
 HomeStackRoutes[screen.THEMES] = {
   screen: Themes,
   navigationOptions: {
