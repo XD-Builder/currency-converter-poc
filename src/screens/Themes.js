@@ -18,7 +18,7 @@ const styles = EStyleSheet.create({
   $purple: '$primaryPurple',
 });
 
-class Themes extends Component {
+export class Themes extends Component {
   static propTypes = {
     navigation: PropTypes.object,
     actions: PropTypes.object,

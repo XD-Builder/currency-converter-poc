@@ -13,7 +13,7 @@ import { connectAlert } from '../components/Alert';
 
 import { changeCurrencyAmount, swapCurrency, getInitialConversion } from '../actions/currencies';
 
-class Home extends Component {
+export class Home extends Component {
   static propTypes = {
     navigation: PropTypes.object,
     dispatch: PropTypes.func,

@@ -8,7 +8,7 @@ import { ListItem, Separator } from '../components/List';
 import currencies from '../data/currencies';
 import { currencyAction } from '../actions';
 
-class CurrencyList extends Component {
+export class CurrencyList extends Component {
   static propTypes = {
     navigation: PropTypes.object,
     actions: PropTypes.object,

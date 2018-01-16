@@ -2,6 +2,8 @@ import rootSaga, { fetchLatestConversionRates, getLatestRate } from '../sagas';
 import { takeEvery, call, put, select } from 'redux-saga/effects';
 import sagaHelper from 'redux-saga-testing';
 
+import store from '../store';
+
 import {
   CURRENCY_CHANGE_BASE,
   CURRENCY_GET_INITIAL_CONVERSION,
@@ -130,5 +132,11 @@ describe('fetchLatestConversionRates to CURRENCY_CONVERSION_ERROR', () => {
 
   it('and then nothing', (result) => {
     expect(result).toBeUndefined();
+  });
+});
+
+describe('sagas async request response', () => {
+  it('should match snapshot', async () => {
+    const p = await store.dispatch({ type: CURRENCY_GET_INITIAL_CONVERSION, currency: 'CNY' });
   });
 });

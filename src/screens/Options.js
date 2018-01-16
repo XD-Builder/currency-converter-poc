@@ -10,7 +10,7 @@ const ICON_PREFIX = Platform.OS === 'ios' ? 'ios' : 'md';
 const ICON_COLOR = '#868686';
 const ICON_SIZE = 23;
 
-class Options extends Component {
+export class Options extends Component {
   static propTypes = {
     navigation: PropTypes.object,
     alertWithType: PropTypes.func,
