@@ -7,8 +7,10 @@ import Options from '../screens/Options';
 import Themes from '../screens/Themes';
 import * as screen from '../screens/screenTypes';
 
+// Home Screen Routes Object
 const HomeStackRoutes = {};
 
+// Set screen type of the home stack and its title using constants defined in screenTypes file.
 HomeStackRoutes[screen.HOME] = {
   screen: Home,
   navigationOptions: {
@@ -23,6 +25,7 @@ HomeStackRoutes[screen.THEMES] = {
     headerTitle: screen.THEMES,
   },
 };
+
 HomeStackRoutes[screen.OPTIONS] = {
   screen: Options,
   navigationOptions: {
@@ -30,10 +33,12 @@ HomeStackRoutes[screen.OPTIONS] = {
   },
 };
 
+// Home Stack with HomeStackRoutes
 const HomeStack = StackNavigator(HomeStackRoutes, {
   headerMode: 'screen',
 });
 
+// CurrencyListStack with HomeStackRoutes
 const CurrencyListStack = StackNavigator({
   CurrencyList: {
     screen: CurrencyList,
@@ -43,6 +48,7 @@ const CurrencyListStack = StackNavigator({
   },
 });
 
+// exported route that specifies Home Stack and Currency List Stack
 export default StackNavigator(
   {
     Home: {

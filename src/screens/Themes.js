@@ -75,6 +75,7 @@ export class Themes extends Component {
   }
 }
 
+// binds this dispatch action with themeAction so it can be called without dispatch(action)
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators(themeAction, dispatch),
 });
