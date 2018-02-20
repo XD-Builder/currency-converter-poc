@@ -84,7 +84,7 @@ describe('currenciesReducer', () => {
   });
 
   it('should reduce CURRENCY_CONVERSION_RESULT action', () => {
-    const error = '';
+    const error = null;
     const resultBaseCurrency = 'CNY';
     const action = {
       type: types.CURRENCY_CONVERSION_RESULT,
