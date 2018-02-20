@@ -6,6 +6,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { ListItem, Separator } from '../components/List';
 import { connectAlert } from '../components/Alert';
 
+import { THEMES } from '../screens/screenTypes';
+
 const ICON_PREFIX = Platform.OS === 'ios' ? 'ios' : 'md';
 const ICON_COLOR = '#868686';
 const ICON_SIZE = 23;
@@ -17,7 +19,7 @@ export class Options extends Component {
   };
 
   handlePressThemes = () => {
-    this.props.navigation.navigate('Themes', {
+    this.props.navigation.navigate(THEMES, {
       screenKey: this.props.navigation.state.key,
     });
   };

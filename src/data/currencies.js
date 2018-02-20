@@ -1,3 +1,4 @@
+// this will be used as selection data for currency list screen
 export default [
   'AUD',
   'BGN',

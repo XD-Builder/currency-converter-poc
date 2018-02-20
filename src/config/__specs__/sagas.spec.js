@@ -1,13 +1,11 @@
-import rootSaga, { fetchLatestConversionRates, getLatestRate } from '../sagas';
-import { takeEvery, call, put, select } from 'redux-saga/effects';
+import { call, put } from 'redux-saga/effects';
 import sagaHelper from 'redux-saga-testing';
+import { fetchLatestConversionRates, getLatestRate } from '../sagas';
 
 import store from '../store';
 
 import {
-  CURRENCY_CHANGE_BASE,
   CURRENCY_GET_INITIAL_CONVERSION,
-  CURRENCY_SWAP_CURRENCY,
   CURRENCY_CONVERSION_RESULT,
   CURRENCY_CONVERSION_ERROR,
 } from '../../actions/actionTypes';
@@ -75,11 +73,11 @@ describe('fetchLatestConversionRates to CURRENCY_CONVERSION_RESULT', () => {
   it('should put CURRENCY_CONVERSION_ERROR', (result) => {
     const expected = put({
       type: CURRENCY_CONVERSION_RESULT,
-      error: null,
       result: respSuccessJson,
     });
     expect(result).toEqual(expected);
   });
+
   it('and then nothing', (result) => {
     expect(result).toBeUndefined();
   });
