@@ -70,7 +70,7 @@ describe('fetchLatestConversionRates to CURRENCY_CONVERSION_RESULT', () => {
     return result;
   });
 
-  it('should put CURRENCY_CONVERSION_ERROR', (result) => {
+  it('should put CURRENCY_CONVERSION_RESULT', (result) => {
     const expected = put({
       type: CURRENCY_CONVERSION_RESULT,
       result: respSuccessJson,
@@ -83,7 +83,7 @@ describe('fetchLatestConversionRates to CURRENCY_CONVERSION_RESULT', () => {
   });
 });
 
-describe('fetchLatestConversionRates to CURRENCY_CONVERSION_ERROR', () => {
+describe('fetchLatestConversionRates to CURRENCY_CONVERSION_ERROR - server error', () => {
   const action = { currency: 'CNY' };
   const it = sagaHelper(fetchLatestConversionRates(action));
 
@@ -111,7 +111,7 @@ describe('fetchLatestConversionRates to CURRENCY_CONVERSION_ERROR', () => {
   });
 });
 
-describe('fetchLatestConversionRates to CURRENCY_CONVERSION_ERROR', () => {
+describe('fetchLatestConversionRates to CURRENCY_CONVERSION_ERROR - network error', () => {
   const action = { currency: 'CNY' };
   const it = sagaHelper(fetchLatestConversionRates(action));
 
@@ -133,8 +133,8 @@ describe('fetchLatestConversionRates to CURRENCY_CONVERSION_ERROR', () => {
   });
 });
 
-describe('sagas async request response', () => {
-  it('should match snapshot', async () => {
-    const p = await store.dispatch({ type: CURRENCY_GET_INITIAL_CONVERSION, currency: 'CNY' });
-  });
-});
+// describe('sagas async request response', () => {
+//   it('should match snapshot', async () => {
+//     const p = await store.dispatch({ type: CURRENCY_GET_INITIAL_CONVERSION, currency: 'CNY' });
+//   });
+// });
