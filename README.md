@@ -4,8 +4,7 @@
 
 1. This project is derived from [currency-converter-starter](https://github.com/HandlebarLabs/currency-converter-starter) project. I worked on the course provided above and thus cloned the repo.
 2. This project enhances on previous project and attempts creating new test cases and increasing code coverage.
-3. This project will provide guides on [project setup and guides](https://www.dropbox.com/s/nq40qvltj4vz8lk/Currency%20Converter%20POC%20Doc.docx?dl=0&raw=1).
-4. This project will be available on Expo for both [Android and iOS](https://expo.io/@harold7590/currency-converter-starter-poc).
+3. This project is available on Expo for both [Android and iOS](https://expo.io/@harold7590/currency-converter-starter-poc).
 
 ## CRNA Specific Documentation
 
